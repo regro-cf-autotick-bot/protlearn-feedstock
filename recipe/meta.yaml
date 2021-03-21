@@ -1,5 +1,5 @@
 {% set name = "protlearn" %}
-{% set version = "0.0.1" %}
+{% set version = "0.0.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: a9d7e6b1d0936614301e7a5e80ce6a3c2f71c5fff663c58838d051cc2fb250c7
+  sha256: db3145ff28a4d82ae8f610bef06bed47a9a118f02188b02bf73ed3587dcf53a7
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -36,7 +36,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: 'A Python package for extracting protein sequence features'
+  summary: A Python package for extracting protein sequence features
 
   doc_url: https://protlearn.readthedocs.io/en/latest/
   dev_url: https://github.com/tadorfer/protlearn
