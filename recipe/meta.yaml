@@ -1,5 +1,5 @@
 {% set name = "protlearn" %}
-{% set version = "0.0.2" %}
+{% set version = "0.0.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: db3145ff28a4d82ae8f610bef06bed47a9a118f02188b02bf73ed3587dcf53a7
+  sha256: 093fecebecd98da885b6d76588d510b42c15dfa65384ac52ebdc95d80ce4f1f8
 build:
   noarch: python
   number: 0
