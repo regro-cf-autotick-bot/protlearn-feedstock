@@ -6,19 +6,19 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 093fecebecd98da885b6d76588d510b42c15dfa65384ac52ebdc95d80ce4f1f8
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python
+    - python {{ python_min }}
     - pip
   run:
-    - python
+    - python >={{ python_min }}
     - numpy
     - pandas
     - scikit-learn
@@ -27,6 +27,8 @@ requirements:
     - biopython
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - protlearn
     - protlearn.dimreduction
